@@ -8,6 +8,11 @@
     top: 166px;
 }
 
+@media screen and (max-width: 1340px) {
+    .calculator-form{
+        right: 15%;
+    }
+}
 
 @media screen and (max-width: 1200px) {
     .calculator-form{

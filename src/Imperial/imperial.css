@@ -1,0 +1,56 @@
+.imperial-data-in{
+    display: flex;
+    justify-content: flex-start;
+    align-items:flex-start;
+    flex-direction: column;
+    width: 100%;
+    height: 13.75rem;
+}
+
+.imperial-height,.imperial-weight{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: row;
+    height: 6.12rem;
+    width: 100%;
+
+}
+.imperial-height label, .imperial-weight label{
+    color: #5E6E85;
+    font-size: 14px;
+    line-height: 150%;
+}
+.imperial-input-container{
+    width: 50%;
+    position: relative;
+}
+.imperial-input-container input{
+    width: 90%;
+    height: 3rem;
+    border: 1px solid #5E6E85;
+    border-radius: 12px;
+    padding: 0.60rem;
+    font-size: 1.25rem;
+    color:  #5E6E85;
+    font-weight: 600;
+    line-height: 110%;
+}
+.imperial-input-container .unit {
+    position: absolute;
+    right:1.5rem; 
+    top: 50%;
+    transform: translateY(-50%); 
+    font-size: 1.25rem;
+    color: #345FF6;
+    font-weight: 600;
+    line-height: 110%;
+  }
+
+
+  @media screen and (max-width: 600px) {
+    .imperial-input-container{
+        width: 47%;
+
+    }
+}

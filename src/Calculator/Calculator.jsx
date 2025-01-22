@@ -1,11 +1,15 @@
-import { useState } from "react"
-
+import { useState} from "react"
+import Metric from "../Metric/Metric";
+import Imperial from "../Imperial/Imperial";
 export default function Calculator(){
+   
     const [formData, setFormData ] = useState({
         height:'',
         weight:''
 
     });
+
+    const [timer, setTimer] = useState(null);
 
     function hangleInput(event){
         const {name, value} = event.target
@@ -13,8 +17,13 @@ export default function Calculator(){
             ...prevInput,
             [name]: value
         }));
-        console.log(formData)
+
+        clearTimeout(timer)
+        const newTimer = setTimeout(() =>{
+        },500)
+        setTimer(newTimer)
     }
+
     return(
         <form className="calculator-form">
             <h2 className="calculator-heading-two">Enter your details below</h2>
@@ -28,22 +37,7 @@ export default function Calculator(){
                     <label htmlFor="imperial" className="label-radio">Imperial</label>
                 </div>
             </div>
-            <div className="calculator-data-in">
-                <div className="calculator-height">
-                    <label htmlFor="height">Height</label>
-                    <div className="input-container">
-                        <input type="text" name="height" id="height" value={formData.height} onChange={hangleInput} />
-                        <span className="unit">cm</span>
-                    </div>
-                </div>
-                <div className="calculator-weight">
-                    <label htmlFor="weight">Weight</label>
-                    <div className="input-container">
-                        <input type="text" name="weight" id="weight" value={formData.weight} onChange={hangleInput} />
-                        <span className="unit">Kg</span>
-                    </div> 
-                </div>
-            </div>
+            <Imperial/>
             <div className="calculator-results">
                 <div className="result">
                     <h3>Welcome!</h3>

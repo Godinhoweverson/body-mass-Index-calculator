@@ -3,13 +3,12 @@
     justify-content: space-between;
     align-items: flex-start;
     flex-direction: column;
-    width: 564px;
-    height: 484px;
+    width: 500px;
     background-color:#FFFFFF;
     z-index: 9999;
     position: absolute;
     right:38%;
-    top: 166px;
+    top: 210px;
     border-radius: 1rem;
     padding: 2rem;
     box-shadow:  4px 4px 40px rgba(94, 110, 133, 0.2);
@@ -154,7 +153,6 @@ input[type="radio"]:hover{
         width: 80%;
         height: 467px;
         left: 50%;
-        top: -230px;
         transform: translateX(-50%);
         right: 0; 
     }
@@ -164,5 +162,8 @@ input[type="radio"]:hover{
 @media screen and (max-width: 440px) {
     .calculator-form{
         top: -130px;
-    }   
+    }
+    .calculator-results{
+        border-radius: 1rem;
+    }
 }

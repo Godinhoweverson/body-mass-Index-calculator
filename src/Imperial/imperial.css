@@ -16,13 +16,13 @@
     width: 100%;
 
 }
-.imperial-height label, .imperial-weight label{
+.imperial-label{
     color: #5E6E85;
     font-size: 14px;
     line-height: 150%;
 }
 .imperial-input-container{
-    width: 50%;
+    width: 48%;
     position: relative;
 }
 .imperial-input-container input{

@@ -10,7 +10,7 @@ export default function Calculator(){
         ft:'',
         in:'',
         st:'',
-        ibs:''
+        lbs:''
 
     });
     const [formDataMetric, setFormDataMetric] = useState({
@@ -24,26 +24,15 @@ export default function Calculator(){
 
     let updateState = measurement === "imperial" ? setFormDataImperial : setFormDataMetric;
      
-
-    function hangleInput(event){
-        const {name, value} = event.target
+    function handleInput(event) {
+        const { name, value } = event.target;
     
-        updateState((prevInput) =>({
-            ...prevInput,
-            [name]: value
+        updateState((prevInput) => ({
+          ...prevInput,
+          [name]: value,
         }));
-        clearTimeout(timer)
-        const newTimer = setTimeout(() =>{
-        },500)
-        setTimer(newTimer)
-
-    }
+      }
  
- 
-    console.log(formDataMetric)
-   
-    
-
     return(
         <form 
         className="calculator-form" 
@@ -81,11 +70,9 @@ export default function Calculator(){
                     <label htmlFor="imperial" className="label-radio">Imperial</label>
                 </div>
             </div>
-            {measurement === "imperial" ? <Imperial value={formDataImperial} inputValue={hangleInput}/> : <Metric value={formDataMetric} inputValue={hangleInput}/>}
+            {measurement === "imperial" ? <Imperial value={formDataImperial} inputValue={handleInput}/> : <Metric value={formDataMetric} inputValue={handleInput}/>}
             <div className="calculator-results">
                 <div className="result">
-                    <h3>Welcome!</h3>
-                    <p>Enter your height and weight and you’ll see your BMI result here</p>
                     {measurement === 'metric' ? <Result metric={formDataMetric}/> : <Result imperial={formDataImperial} />}
                 </div>
             </div>

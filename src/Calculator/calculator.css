@@ -122,8 +122,8 @@ input[type="radio"]:hover{
     align-items: flex-start;
     justify-content: space-between;
     flex-direction: column;
-    padding: 2rem;
-    width: 80%;
+    padding: 1.5rem;
+    width: 90%;
     height: 55%;
 
 }

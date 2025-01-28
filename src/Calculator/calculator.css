@@ -117,33 +117,11 @@ input[type="radio"]:hover{
     border-top-left-radius:16px;
     border-bottom-left-radius: 16px;
 }
-.result{
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    flex-direction: column;
-    padding: 1.5rem;
-    width: 90%;
-    height: 55%;
-
-}
-
-.result h3{
-    font-size: 1.25rem;
-    color: #ffff;
-    font-weight: 600;
-    line-height: 110%;
-}
-
-.result p{
-    color: #ffff;
-    font-size: 0.87rem;
-    line-height: 150%;
-}
 
 
 @media screen and (max-width: 1340px) {
     .calculator-form{
+        height: 68%;
         right: 15%;
     }
 }
@@ -164,6 +142,19 @@ input[type="radio"]:hover{
         top: -130px;
     }
     .calculator-results{
+        height: 257px;
         border-radius: 1rem;
+    }
+
+    .calculator-data-in{
+        height: 212px;
+       flex-direction: column;
+    }
+    
+    .calculator-height,.calculator-weight{
+        width: 100%;
+    }
+    .input-container{
+        width: 100%;
     }
 }

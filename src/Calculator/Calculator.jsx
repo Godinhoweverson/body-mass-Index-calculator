@@ -2,6 +2,7 @@ import { useState} from "react"
 import Metric from "../Metric/Metric";
 import Imperial from "../Imperial/Imperial";
 import Result from "../Result/Result";
+import BmiUiInitial from "../BmiUi/BmiUiInitial";
 import { useWindowSize } from "@uidotdev/usehooks";
 
 export default function Calculator(){
@@ -14,16 +15,22 @@ export default function Calculator(){
 
     });
     const [formDataMetric, setFormDataMetric] = useState({
-        cm:null,
-        kg:null,
+        cm:'',
+        kg:'',
     });
-    const [timer, setTimer] = useState(null);
+    
     const [measurement, setMeasurement] = useState('metric');
 
     const size = useWindowSize();
 
     let updateState = measurement === "imperial" ? setFormDataImperial : setFormDataMetric;
      
+    function handleRadioChange (e){
+        setMeasurement(e.target.value);
+        setFormDataImperial('');
+        setFormDataMetric('');
+    }
+
     function handleInput(event) {
         const { name, value } = event.target;
     
@@ -37,7 +44,7 @@ export default function Calculator(){
         <form 
         className="calculator-form" 
         style={{ 
-          height: measurement === "metric" ? "420px" : "500px",
+          height:measurement === "metric" ? ( size.width < 440 ? "585px" : "420px") :  ( size.width < 440 ? "585px" : "500px"),
           top: size.width > 1200 
             ? (measurement === "metric" ? "166px" : "210px") 
             : (size.width < 440  ? "-100px" : "-210px")
@@ -52,8 +59,7 @@ export default function Calculator(){
                         id="metric" 
                         value="metric"
                         checked={measurement === "metric"}
-                        onChange={(e) =>setMeasurement(e.target.value)
-                        }
+                        onChange={handleRadioChange}
                     />
                     <label htmlFor="metric" className="label-radio">Metric</label>
                 </div>
@@ -64,8 +70,7 @@ export default function Calculator(){
                         id="imperial" 
                         value="imperial"
                         checked={measurement === "imperial"}
-                        onChange={(e) =>setMeasurement(e.target.value)
-                        }
+                        onChange={handleRadioChange}
                         />
                     <label htmlFor="imperial" className="label-radio">Imperial</label>
                 </div>
@@ -73,7 +78,7 @@ export default function Calculator(){
             {measurement === "imperial" ? <Imperial value={formDataImperial} inputValue={handleInput}/> : <Metric value={formDataMetric} inputValue={handleInput}/>}
             <div className="calculator-results">
                 <div className="result">
-                    {measurement === 'metric' ? <Result metric={formDataMetric}/> : <Result imperial={formDataImperial} />}
+                    {measurement === 'metric' ? <Result metric={formDataMetric} active={measurement}/> : <Result imperial={formDataImperial}  active={measurement}/>}
                 </div>
             </div>
         </form>

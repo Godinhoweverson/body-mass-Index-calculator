@@ -5,7 +5,7 @@ export default function Metric({formDataMetric,inputValue}){
                     <div className="calculator-height">
                         <label htmlFor="height">Height</label>
                         <div className="input-container">
-                            <input type="number" name="cm" id="cm" min="0" step="0.1" value={formDataMetric} onChange={inputValue}/>
+                            <input type="number" name="cm" id="cm" min="0" value={formDataMetric} onChange={inputValue}/>
                             <span className="unit">cm</span>
                         </div>
                     </div>

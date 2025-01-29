@@ -9,7 +9,16 @@ export default function Result({metric, imperial, active}){
   const [showInitial, setShowInitial] = useState(true);
 
   let inches;
-  if(imperial){inches = (Number(imperial.ft) * 12) + Number(imperial.in)}
+  let pounds;
+  let cm;
+
+  if(imperial){
+    inches = (Number(imperial.ft) * 12) + Number(imperial.in)
+    pounds = ((Number(imperial.st) * 14) + Number(imperial.lbs));
+  }else if(metric){
+    cm = metric.cm && !metric.cm.includes(".") ? metric.cm / 100 : metric.cm;
+  };
+
   useEffect(() => {
     if(active){
       setShowInitial(true);
@@ -17,7 +26,7 @@ export default function Result({metric, imperial, active}){
       setBmiMetric(null);
     }
     if(imperial){
-      const pounds = ((Number(imperial.st) * 14) + Number(imperial.lbs));
+     
       if(pounds > 0 && inches > 0){
         const calculateBmi = (pounds * 703)/(inches ** 2)
         setShowInitial(false)
@@ -28,20 +37,24 @@ export default function Result({metric, imperial, active}){
         setBmiImperial(null);
       }
     }else if(metric){
-      let cm = metric.cm && !metric.cm.includes(".") ? metric.cm / 100 : metric.cm;
-      let calculateBmi = metric.kg / (cm * cm);
-      if(cm > 0 && metric.kg > 0){
-        setShowInitial(false)
-        setBmiMetric(calculateBmi.toFixed(1));
-       
+      console.log(cm)
+      if(cm < 3.00 &&  metric.kg < 350){
+        let calculateBmi = metric.kg / (cm * cm);
+        if(cm > 0 && metric.kg > 0){
+          setShowInitial(false)
+          setBmiMetric(calculateBmi.toFixed(1));
+         
+        }else{
+          setBmiMetric(null);
+        }
       }else{
-        setBmiMetric(null);
+        alert("Height must be between 0 and 3.00 meters, and weight must not exceed 300 kg.")
       }
     }},[metric, imperial]);
   return ( 
     <>
     {showInitial && <BmiUiInitial/>}
-    {bmiMetric && <BmiUi metric={bmiMetric} heightMetric={metric.cm}/>}
+    {bmiMetric && <BmiUi metric={bmiMetric} heightMetric={cm}/>}
     {bmiImperial && <BmiUi imperial={bmiImperial} inchesImperial={inches}/>}
     </>
     

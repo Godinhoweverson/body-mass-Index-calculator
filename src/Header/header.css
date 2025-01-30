@@ -4,6 +4,7 @@ header{
     align-items: center;
     height: 26.50%;
     width: 100%;
+    margin-bottom: 4rem;
   
 }
 
@@ -53,6 +54,7 @@ header{
 @media screen and (max-width: 1200px) {
     header{
        flex-direction: column;
+       margin-bottom: 12rem;
     }
     .header-box-left{
         justify-content: flex-start;
@@ -87,6 +89,9 @@ header{
   }
 
   @media screen and (max-width: 440px) {
+    header{
+        margin-bottom: 19rem;
+     }
     .header-content{
         height: 55%;
     }

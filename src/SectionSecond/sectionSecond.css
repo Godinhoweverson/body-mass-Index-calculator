@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 8.8%;
+    min-height: 8.8%;
     background: rgb(244,248,254);
     background: linear-gradient(90deg, rgba(214,230,254,0.01) 54%, rgba(244,248,254,1) 79%);
     border-radius: 2rem;
@@ -10,12 +10,25 @@
     margin-top: 6rem;
 }
 
-.content-SectionSecond{
+.subBox-SectionSecond{
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     height: 100%;
+}
+
+.content-sectionSecond img{
+    height: 20%;
+    margin-bottom: 2.8rem;
+}
+
+.indications{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    height: 80%;
 }
 
 .content-sectionSecond{
@@ -25,20 +38,66 @@
     flex-direction: column;
     width: 31%;
     height: 100%;
- 
 }
 
-.content-sectionSecond h3{
+.indications h3{
     font-size: 1.50rem;
     font-weight: 600;
     line-height: 110%;
     color: #253347;
+    margin-bottom: 1.5rem;
 }
 
 
-.content-sectionSecond p{
+.indications p{
     font-size: 1rem;
     text-align: start;
     color: #5E6E85;
 }
+@media screen and (max-width: 1200px){
+    .subBox-SectionSecond{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .box-sectionSecond{
+        border-radius: unset;
+    }
 
+    .content-sectionSecond{
+        justify-content: space-between;
+        align-content: center;
+        flex-direction: row;
+        width: 100%;
+        margin-bottom: 2.5rem;
+    }
+
+    .content-sectionSecond img{
+        height: 100%;
+        width: 10%;
+    }
+    
+    .indications{
+        height: 100%;
+        width: 85%;
+    }
+}
+@media screen and (max-width: 680px){
+    .box-sectionSecond{
+        padding: 2.5rem 3.75rem;
+    }
+}
+
+@media screen and (max-width: 440px){
+    .box-sectionSecond{
+        margin-top: 0;
+        padding: 1.8rem 2.5rem 0 2.5rem;
+    }
+    
+    .content-sectionSecond{
+        flex-direction: column;
+    }
+
+    .content-sectionSecond img{
+        width: 20%;
+    }
+}

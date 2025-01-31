@@ -7,6 +7,7 @@ import './Imperial/imperial.css'
 import './Result/result.css'
 import './SectionFirst/sectionFirst.css'
 import './SectionSecond/sectionSecond.css'
+import './SectionThird/sectionThird.css'
 import App from './App.jsx'
 
 createRoot(document.getElementById('root')).render(

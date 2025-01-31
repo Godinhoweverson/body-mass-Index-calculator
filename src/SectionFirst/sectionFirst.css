@@ -98,6 +98,7 @@
 
 @media screen and (max-width:440px) {
     .box-sectionFirst{
+        padding-bottom: 0;
         width: 83%;
     }
 

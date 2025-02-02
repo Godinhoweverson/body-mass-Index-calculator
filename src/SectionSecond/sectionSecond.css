@@ -48,12 +48,6 @@
     margin-bottom: 1.5rem;
 }
 
-
-.indications p{
-    font-size: 1rem;
-    text-align: start;
-    color: #5E6E85;
-}
 @media screen and (max-width: 1200px){
     .subBox-SectionSecond{
         flex-direction: column;

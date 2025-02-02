@@ -82,6 +82,7 @@ input[type="radio"]:hover{
 }
 .input-container{
     position: relative;
+    width: 100%;
 }
 .input-container input{
     width: 90%;

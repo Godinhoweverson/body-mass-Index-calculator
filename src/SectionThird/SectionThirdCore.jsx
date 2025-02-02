@@ -12,9 +12,11 @@ export default function SectionThirdCore({imageIcon, heading, paragraph, name}){
                         </>
                     ): (
                     <>
+                    <div className="content-thidSection">
                         <img src={imageIcon} alt={name} />
                         <h2>{heading}</h2>
-                        <p>{paragraph}</p>
+                    </div>
+                    <p>{paragraph}</p>
                     </>
                     )
                     )

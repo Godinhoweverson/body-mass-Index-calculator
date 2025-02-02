@@ -6,7 +6,7 @@ import age from './assets/images/icon-age.svg'
 import muscle from './assets/images/icon-muscle.svg'
 import pregnancy from './assets/images/icon-pregnancy.svg'
 import race from './assets/images/icon-race.svg'
-import curved from './assets/images/pattern-curved-line-left.svg'
+import curved from './assets/images/pattern-curved-line-right.svg'
 
 export const SECTION_SECOND =
 [
@@ -38,7 +38,7 @@ export const SECTION_THIRD =
         {
             "id":1,
             "name":"limitations",
-            "heading": "limitations of bmi",
+            "heading": "Limitations of BMI",
             "paragraph": "Although BMI is often a practical indicator of healthy weight, it is not suited for every person. Specific groups should carefully consider their BMI outcomes, and in certain cases, the measurement may not be beneficial to use."
         },
         {

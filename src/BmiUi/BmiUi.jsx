@@ -67,7 +67,7 @@ export default function BmiUi({metric,heightMetric, imperial, inchesImperial}){
             <div className="bmi-result">
                 <div className="bmi">
                     <p>Your BMI is...</p>
-                    <h2>{metric ? metric : imperial}</h2>
+                    <h2>{metric && metric < 200 ? metric : (imperial < 200 ? imperial : null)}</h2>
                 </div>
                 <div className="bmi-suggest">
                     <p>Your BMI suggests you’re a {statusBmi}. Your ideal weight is between {metric && metric < 40 && metric > 17.9 || imperial && imperial < 40 && metric > 17.9
